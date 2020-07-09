@@ -45,7 +45,7 @@ Adjust p-values (Benjamini-Hochberg FDR):
 require(data.table)
 data = fread("filtered_sumStats.txt", header = T)
 
-data$p_FDR = p.adjust(data$P-value, "BH", 358899)
+data$p_FDR = p.adjust(data$P, "BH", 358899)
 
 write.table(data, file = "FDR_filtered_sumStats.txt", sep = "\t", row.names = F, quote = F)
 ```
